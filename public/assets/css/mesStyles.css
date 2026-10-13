@@ -1,0 +1,738 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+
+/* ==========================================================
+   Palette et tokens
+   ========================================================== */
+:root {
+	--couleur-fond-page: #c9d6d0;
+	--couleur-fond: #e8eeeb;
+	--couleur-surface: #ffffff;
+	--couleur-primaire: #2f6b4f;
+	--couleur-primaire-fonce: #1f4d38;
+	--couleur-primaire-claire: #dcebe3;
+	--couleur-accent: #2c5f82;
+	--couleur-accent-fonce: #1f4560;
+	--couleur-accent-claire: #dbe7ef;
+	--couleur-ligne-paire: #eef3f0;
+	--couleur-ligne-tableau: #f1f6f3;
+	--couleur-ligne-tableau-paire: #e1eae5;
+	--couleur-texte: #1e2a26;
+	--couleur-texte-attenue: #4a5a55;
+	--couleur-bordure: #b8c8c0;
+	--couleur-succes-fond: #e6f4ea;
+	--couleur-succes-texte: #2f6b4f;
+	--couleur-erreur-fond: #fbe9e7;
+	--couleur-erreur-texte: #b3261e;
+	--couleur-deconnexion: #8a4a3a;
+	--couleur-deconnexion-fonce: #6e3a2d;
+	--rayon-petit: 6px;
+	--rayon-moyen: 10px;
+	--ombre-legere: 0 1px 2px rgba(20, 45, 34, 0.14), 0 3px 10px rgba(20, 45, 34, 0.10);
+	--ombre-carte: 0 2px 4px rgba(20, 45, 34, 0.12), 0 10px 30px rgba(20, 45, 34, 0.18);
+}
+
+/* Styles des divisions principales de la page */
+body {
+	margin: 0;
+	font-family: 'Manrope', "Trebuchet MS", Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 13.5px;
+	color: var(--couleur-texte);
+	background-color: var(--couleur-fond-page);
+	-webkit-font-smoothing: antialiased;
+}
+
+a img {
+	border: 0;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+	outline: 2px solid var(--couleur-accent);
+	outline-offset: 2px;
+}
+
+/*	PAGE
+	________________________________________________________
+*/
+#page {
+	background-color: var(--couleur-fond);
+	width: 100%;
+	max-width: 1100px;
+	margin: 1.5em auto;
+	padding: 0 1em 2.5em 1em;
+	border-radius: var(--rayon-moyen);
+	box-shadow: var(--ombre-carte);
+	box-sizing: border-box;
+}
+
+#page::after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+/*	EN-TETE
+	________________________________________________________
+*/
+#entete {
+	background-color: var(--couleur-primaire-fonce);
+	border-bottom: 5px solid var(--couleur-accent);
+	height: 104px;
+	box-sizing: border-box;
+	margin: 0 -1em 1.6em -1em;
+	padding: 0 1.6em;
+	border-radius: var(--rayon-moyen) var(--rayon-moyen) 0 0;
+	display: flex;
+	align-items: center;
+}
+
+#entete #logoGSB {
+	float: left;
+	background-color: white;
+	height: 72px;
+	width: auto;
+	padding: 4px 8px;
+	box-sizing: content-box;
+	border-radius: var(--rayon-moyen);
+	margin-right: 28px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+#entete h1 {
+	font-family: 'Manrope', sans-serif;
+	font-weight: 800;
+	font-size: 28px;
+	letter-spacing: -0.01em;
+	text-align: left;
+	color: white;
+	margin: 0;
+	flex: 1;
+}
+
+/*	MENU GAUCHE
+	________________________________________________________
+*/
+#menuGauche {
+	margin-top: 0;
+	padding: 0;
+	color: var(--couleur-accent-fonce);
+	float: left;
+	width: 210px;
+	box-sizing: border-box;
+}
+
+#menuGauche #infosUtil {
+	margin-top: 0;
+	padding: 1.1em 0.9em 0.9em 0.9em;
+	background-color: var(--couleur-surface);
+	border: 1px solid var(--couleur-bordure);
+	border-top: 4px solid var(--couleur-primaire);
+	border-radius: var(--rayon-moyen);
+	box-shadow: var(--ombre-legere);
+	width: 210px;
+	box-sizing: border-box;
+	text-align: center;
+}
+
+#menuGauche #user {
+	width: 64px;
+	float: none;
+	margin: 0 auto;
+	padding: 0;
+}
+
+#menuGauche #user img {
+	width: 64px;
+	height: 64px;
+	object-fit: cover;
+	border-radius: 50%;
+	border: 3px solid var(--couleur-surface);
+	box-shadow: 0 0 0 2px var(--couleur-primaire);
+}
+
+#menuGauche #infos {
+	margin-top: 0.5em;
+	padding: 0.2em;
+}
+
+#menuGauche #infos h2 {
+	margin-top: 0;
+	color: var(--couleur-primaire-fonce);
+	font-family: 'Manrope', sans-serif;
+	font-size: 1.1em;
+	font-weight: 800;
+	text-align: center;
+}
+
+#menuGauche #infos h3 {
+	font-size: 0.95em;
+	font-weight: 600;
+	color: var(--couleur-texte-attenue);
+	text-align: center;
+	margin: 0.2em 0 0.9em 0;
+}
+
+/* style à appliquer à la balise ul d'identifiant menulist */
+#menuGauche ul.menuList {
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+	font-size: 1em;
+}
+
+/* style à appliquer aux éléments de la balise ul d'identifiant menulist */
+#menuGauche ul.menuList li {
+	position: relative;
+	margin: 0 0 0.45em 0;
+	padding: 0px;
+}
+
+#menuGauche ul.menuList li:last-child {
+	margin-bottom: 0;
+}
+
+/* apparences des liens dans listes et sous-listes non numérotées */
+#menuGauche ul.menuList a {
+	display: block;
+	text-decoration: none;
+	cursor: pointer;
+	padding: 0.65em 0.8em;
+	text-align: left;
+	font-size: 1em;
+	font-weight: 700;
+	border: none;
+	border-radius: var(--rayon-petit);
+	color: var(--couleur-primaire-fonce);
+	background: var(--couleur-primaire-claire);
+	border-left: 3px solid transparent;
+	transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
+}
+
+#menuGauche ul.menuList a:hover {
+	color: white;
+	background: var(--couleur-accent);
+	border-left: 3px solid #ffffff;
+	transform: translateX(2px);
+}
+
+/* Bouton de déconnexion : visible sans attendre le survol */
+#menuGauche #infosUtil ul.menuList a {
+	text-align: center;
+	border-left: none;
+	color: white;
+	background: var(--couleur-deconnexion);
+	font-size: 0.92em;
+	padding: 0.5em 0.8em;
+}
+
+#menuGauche #infosUtil ul.menuList a:hover {
+	background: var(--couleur-deconnexion-fonce);
+	border-left: none;
+	transform: none;
+}
+
+#menuGauche #menuPrincipal {
+	margin-top: 1.2em;
+	background-color: var(--couleur-primaire-fonce);
+	border: 1px solid var(--couleur-primaire-fonce);
+	border-radius: var(--rayon-moyen);
+	box-shadow: var(--ombre-legere);
+	padding: 0.6em;
+	box-sizing: border-box;
+}
+
+/*	CONTENU
+	________________________________________________________
+*/
+#contenu {
+	margin-top: 0;
+	padding: 0 0 1em 1.5em;
+	float: right;
+	width: calc(100% - 240px);
+	min-height: 27em;
+	box-sizing: border-box;
+}
+
+#contenu h2 {
+	background: var(--couleur-accent);
+	box-shadow: var(--ombre-legere);
+	border-left: 5px solid var(--couleur-accent-fonce);
+	border-radius: var(--rayon-petit);
+	margin-top: 0;
+	padding: 0.55em 0.8em;
+	color: white;
+	font-family: 'Manrope', sans-serif;
+	font-size: 1.5em;
+	font-weight: 800;
+}
+
+/* Styles pour les tableaux de la page principale */
+#contenu table {
+	background-color: var(--couleur-surface);
+	border: 1px solid var(--couleur-primaire);
+	border-radius: var(--rayon-moyen);
+	box-shadow: var(--ombre-legere);
+	overflow: hidden;
+	color: var(--couleur-texte);
+	margin: 0 auto;
+	border-collapse: collapse;
+}
+
+/* Style pour les lignes d'en-tête des tableaux */
+#contenu th {
+	background-color: var(--couleur-primaire);
+	height: 15px;
+	text-align: center;
+	vertical-align: top;
+	font-weight: 700;
+	border-bottom: none;
+	font-size: 0.95em;
+	color: white;
+}
+
+#contenu td {
+	border: 1px solid var(--couleur-bordure);
+}
+
+table.listeLegere {
+	width: 95%;
+	margin: 0 2em;
+}
+
+/* Tableaux quadrillés utilisés pour l'affichage de listes avec contenu léger*/
+table.listeLegere th,
+table.listeLegere td {
+	border: 1px solid var(--couleur-bordure);
+	padding: 0.3em 0.5em;
+	vertical-align: top;
+	text-align: left;
+	font-size: 0.86em;
+}
+
+table.listeLegere td {
+	vertical-align: middle;
+	font-weight: normal;
+	padding: 0.3em 0.5em;
+	text-align: center;
+}
+
+table.listeLegere th.eltForfait {
+	color: var(--couleur-accent-fonce);
+}
+
+table.listeLegere th.date,
+table.listeLegere th.montant {
+	width: 15%;
+	color: white;
+}
+
+table.listeLegere th.libelle {
+	width: 70%;
+	color: white;
+}
+
+table.listeLegere td.libelle {
+	text-align: left;
+}
+
+table.listeLegere td.montant {
+	text-align: right;
+	font-weight: 600;
+}
+
+/* Lignes alternées : les tableaux se lisent et se détachent mieux */
+#contenu table.listeLegere td {
+	background-color: var(--couleur-surface);
+}
+
+#contenu table.listeLegere tr:nth-child(even) td {
+	background-color: var(--couleur-ligne-paire);
+}
+
+/* Tableaux placés dans un bloc blanc (#sousContenu) : corps teinté pour
+   ne pas se fondre dans le fond blanc du bloc */
+#sousContenu table.listeLegere {
+	box-shadow: var(--ombre-carte);
+	margin-bottom: 1em;
+}
+
+#sousContenu table.listeLegere td {
+	background-color: var(--couleur-ligne-tableau);
+	border-color: #c5d3cc;
+}
+
+#sousContenu table.listeLegere tr:nth-child(even) td {
+	background-color: var(--couleur-ligne-tableau-paire);
+}
+
+/* Survol d'une ligne */
+#contenu table.listeLegere tr:hover td {
+	background-color: var(--couleur-accent-claire);
+}
+
+/* Lignes à statut particulier : restent prioritaires sur l'alternance */
+#contenu table.listeLegere tr.report td {
+	background-color: var(--couleur-accent-claire);
+}
+
+#contenu table.listeLegere tr.nonvalide td {
+	background-color: var(--couleur-erreur-fond);
+}
+
+/*	SOUS CONTENU FORMULAIRES
+	________________________________________________________
+*/
+#sousContenu {
+	box-shadow: var(--ombre-carte);
+	border: 1px solid var(--couleur-bordure);
+	border-radius: var(--rayon-moyen);
+	padding: 0;
+	margin: 0 0 1.2em 0;
+	background-color: var(--couleur-surface);
+	color: var(--couleur-texte);
+	white-space: normal;
+	overflow: hidden;
+}
+
+#sousContenu h3 {
+	color: white;
+	background: var(--couleur-primaire);
+	margin: 0;
+	padding: 0.45em 0.8em;
+	font-size: 1.02em;
+	font-weight: 700;
+}
+
+#sousContenu h4 {
+	margin: 0.6em 0 0.3em 0;
+	padding: 0.5em 0.8em 0.3em 0.8em;
+	font-size: 1.2em;
+	font-weight: 800;
+	color: var(--couleur-accent-fonce);
+	border-bottom: 2px solid var(--couleur-bordure);
+}
+
+/*	FORMULAIRES
+	________________________________________________________
+*/
+.corpsForm,
+.piedForm {
+	display: inline-block !important;
+	vertical-align: middle;
+	margin: 0;
+}
+
+.corpsForm {
+	width: 460px;
+	max-width: 100%;
+	vertical-align: top;
+	padding: 0.5em 0.8em;
+	box-sizing: border-box;
+}
+
+.piedForm {
+	width: 180px;
+	vertical-align: bottom;
+	padding: 0 0.8em 0.5em 0.8em;
+	box-sizing: border-box;
+}
+
+.piedForm p {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.5em;
+	margin: 0;
+}
+
+form {
+	padding: 0.4em 0.4em 0.7em 0.4em;
+}
+
+/* Chaque paire label + champ, alignée en ligne plutôt qu'en float :
+   s'adapte proprement même quand un libellé est long et repasse à la ligne. */
+.corpsForm p {
+	display: flex;
+	align-items: center;
+	margin: 0 0 0.35em 0;
+	gap: 0.5em;
+}
+
+/* Empêche l'attribut HTML "size" des champs (ex: libellé size="50") de les
+   faire déborder de .corpsForm et de chevaucher les boutons de .piedForm. */
+.corpsForm input,
+.corpsForm select {
+	flex: 1 1 auto;
+	min-width: 0;
+	width: 100%;
+}
+
+/* Cas particuliers où la largeur générique ne convient pas : */
+
+/* fraisforfait_edit.php : quantités (0 à 1000), pas besoin de toute la largeur */
+.corpsForm input[name^="lesFrais"] {
+	flex: 0 0 auto;
+	width: 70px;
+}
+
+/* fraishorsforfait_edit.php : le libellé doit rester le champ le plus large de la ligne */
+.corpsForm label[for="txtLibelleHF"] {
+	flex: 0 0 22%;
+}
+
+/* liste_deroulante.php (sélecteur de mois) : ne doit pas s'étirer sur toute la largeur */
+#lstMois {
+	flex: 0 0 auto;
+	width: auto;
+	min-width: 170px;
+}
+
+.corpsForm label {
+	flex: 0 0 42%;
+	text-align: right;
+	margin: 0;
+	padding: 0;
+	line-height: 1.3;
+	font-size: 0.88em;
+	color: var(--couleur-texte-attenue);
+	font-weight: 600;
+}
+
+input,
+button,
+textarea,
+select {
+	font-family: 'Manrope', sans-serif;
+	font-size: 0.88em;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="number"],
+input[type="password"],
+select {
+	border: 1px solid var(--couleur-bordure);
+	border-radius: var(--rayon-petit);
+	padding: 0.3em 0.5em;
+	background-color: #f7faf8;
+	color: var(--couleur-texte);
+	transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+button {
+	width: 60px;
+	height: 30px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+input:hover,
+textarea:hover,
+select:hover {
+	border-color: var(--couleur-accent);
+	cursor: pointer;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+input[type="number"]:focus,
+input[type="password"]:focus,
+select:focus {
+	background-color: var(--couleur-surface);
+	border-color: var(--couleur-accent);
+}
+
+input.bouton {
+	cursor: pointer;
+	width: auto;
+	min-width: 76px;
+	padding: 0 0.75em;
+	height: 30px;
+	font-size: 0.85em;
+	font-weight: 700;
+	border: 2px solid transparent;
+	border-radius: var(--rayon-petit);
+	box-shadow: none;
+	transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+	flex: 0 0 auto;
+}
+
+/* Action principale (Valider / Ajouter) : couleur pleine */
+input[type="submit"].bouton {
+	color: white;
+	background: var(--couleur-primaire);
+}
+
+input[type="submit"].bouton:hover {
+	background: var(--couleur-primaire-fonce);
+}
+
+/* Action secondaire (Effacer) : contour, moins prioritaire visuellement */
+input[type="reset"].bouton {
+	color: var(--couleur-accent-fonce);
+	background: var(--couleur-surface);
+	border-color: var(--couleur-accent);
+}
+
+input[type="reset"].bouton:hover {
+	border-color: var(--couleur-accent);
+	background: var(--couleur-accent-claire);
+}
+
+/*	GESTION DES ETATS ET MONTANTS VALIDES
+	________________________________________________________
+*/
+
+#etat,
+#montantValide {
+	display: inline-block;
+	margin: 0;
+}
+
+#etat {
+	margin: 0.7em;
+	padding: 12px 10px 12px 74px;
+	background-repeat: no-repeat;
+	background-position: 18px center;
+	background-size: 36px;
+	font-size: 0.98em;
+	width: 440px;
+	max-width: 100%;
+	box-sizing: border-box;
+	vertical-align: top;
+	border-radius: var(--rayon-moyen);
+	background-color: var(--couleur-surface);
+	border: 1px solid var(--couleur-bordure);
+	box-shadow: var(--ombre-legere);
+}
+
+#etat.VA {
+	background-image: url("../images/euroOrange.png");
+}
+
+#etat.RB {
+	background-image: url("../images/euroVert.png");
+}
+
+#etat.CL {
+	background-image: url("../images/lockBlue.png");
+}
+
+#etat.CR {
+	background-image: url("../images/lockOpenGreen.png");
+}
+
+#montantValide {
+	margin: 0.7em;
+	font-size: 1.15em;
+	width: 170px;
+	vertical-align: top;
+	text-align: center;
+	background-color: var(--couleur-accent);
+	color: white;
+	border-radius: var(--rayon-moyen);
+	border: 1px solid var(--couleur-accent-fonce);
+	overflow: hidden;
+	box-shadow: var(--ombre-legere);
+	padding-top: 0.6em;
+	font-weight: 600;
+}
+
+#montantValide div {
+	margin: 0.5em 0 0 0;
+	padding: 0.45em;
+	font-weight: 700;
+	font-size: 1.1em;
+	color: var(--couleur-accent-fonce);
+	background-color: white;
+	text-align: center;
+	height: auto;
+}
+
+/*	GESTION DES MESSAGES
+	________________________________________________________
+*/
+.erreur,
+.info {
+	margin: 0 0 1em 0;
+	padding: 14px 16px 14px 50px;
+	background-repeat: no-repeat;
+	background-position: 16px center;
+	background-size: 20px;
+	font-size: 1em;
+	border-radius: var(--rayon-moyen);
+	border: 1px solid transparent;
+	border-left-width: 5px;
+	box-shadow: var(--ombre-legere);
+}
+
+.info {
+	background-image: url("../images/valid.png");
+	color: var(--couleur-succes-texte);
+	background-color: var(--couleur-succes-fond);
+	border-color: var(--couleur-primaire);
+}
+
+.erreur {
+	background-image: url("../images/cancel.png");
+	color: var(--couleur-erreur-texte);
+	background-color: var(--couleur-erreur-fond);
+	border-color: var(--couleur-erreur-texte);
+}
+
+.erreur ul,
+.info ul {
+	margin: 0;
+	padding-left: 1.1em;
+}
+
+.erreurSaisie {
+	color: var(--couleur-erreur-texte);
+	font-weight: 700;
+	font-size: 0.9em;
+}
+
+.centre {
+	text-align: center;
+}
+
+.droite {
+	text-align: right;
+}
+
+.encadre {
+	border: 1px solid var(--couleur-bordure);
+	border-radius: var(--rayon-petit);
+	width: 95%;
+}
+
+/* Style pour les liens de la page principale */
+#contenu .corpsTexte {
+	width: 80%;
+	font-size: 1.1em;
+}
+
+/* Style pour les liens de la page principale */
+#contenu a {
+	font-size: 1em;
+	color: var(--couleur-accent);
+	text-decoration: none;
+}
+
+#contenu a:hover {
+	text-decoration: underline;
+}
+
+/* Style pour les parties importantes de la page principale */
+#contenu strong {
+	font-weight: 700;
+}
+
+#contenu .card {
+	border: 1px solid var(--couleur-bordure);
+	border-radius: var(--rayon-moyen);
+	box-shadow: var(--ombre-legere) !important;
+}
+
