@@ -24,7 +24,8 @@ class Gererfrais extends BaseController
         $anneemois = $this->gsb_lib->get_annee_mois();
         $this->id_annee = $this->gsb_lib->get_annee_from_anneemois($anneemois);
         $this->id_mois = $this->gsb_lib->get_mois_from_anneemois($anneemois);
-        $this->id_visiteur = session()->get('idvisiteur');
+        
+        $this->id_visiteur = session()->get('idutilisateur');
 
         $fiche = $this->gsb_model->get_id_ficheFrais($this->id_visiteur, $this->id_annee, $this->id_mois);
         if ($fiche != null && !empty($fiche['idFiche'])) {
