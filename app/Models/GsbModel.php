@@ -8,10 +8,10 @@ use App\Libraries\Gsb_lib;
 class GsbModel extends Model
 {
     /** Retourne les informations d'un visiteur */
-    public function get_infos_visiteur($login, $mdp)
+    public function get_infos_utilisateur($login, $mdp)
     {
-        return $this->db->table('visiteur')
-            ->select('idvisiteur, nom, prenom, login')
+        return $this->db->table('utilisateur')
+            ->select('idutilisateur, nom, prenom, login')
             ->where('login', $login)
             ->where('mdp', $mdp)
             ->get()
@@ -19,10 +19,10 @@ class GsbModel extends Model
     }
 
     /** Retourne les détails d'un visiteur */
-    public function get_detail_visiteur($id)
+    public function get_detail_utilisateur($id)
     {
-        return $this->db->table('visiteur')
-            ->where('idvisiteur', $id)
+        return $this->db->table('utilisateur')
+            ->where('idutilisateur', $id)
             ->get()
             ->getRowArray();
     }
