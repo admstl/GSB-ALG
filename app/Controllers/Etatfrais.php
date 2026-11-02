@@ -20,7 +20,7 @@ class Etatfrais extends BaseController
         $this->gsb_lib = new Gsb_lib();
         $this->gsb_model = new GsbModel();
 
-        $this->id_utilisateur = session()->get('idutilisateur');
+        $this->id_visiteur = session()->get('idutilisateur');
     }
 
     /** Méthode par défaut */
