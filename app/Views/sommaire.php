@@ -7,7 +7,7 @@
         </div>
         <div id="infos">
             <h2><?= esc($session->get('prenom') . ' ' . $session->get('nom')) ?></h2>
-            <h3>Visiteur médical</h3>  
+            <h3><?= esc($session->get('libelleRole')) ?></h3>  
         </div>
         <ul class="menuList">
             <li>

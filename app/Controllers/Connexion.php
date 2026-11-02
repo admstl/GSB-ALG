@@ -57,6 +57,7 @@ class Connexion extends BaseController
                 'nom' => $utilisateur['nom'],
                 'prenom' => $utilisateur['prenom'],
                 'role' => $utilisateur['idrole'],
+                'libelleRole' => $utilisateur['libelle'],
                 'isLoggedIn' => true,
             ]);
             return redirect()->to('/accueil');
