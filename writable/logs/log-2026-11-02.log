@@ -81,3 +81,174 @@ AND `mdp` = :mdp:', [...], false)
 12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
 13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\goarant\\GSB-ALG\\public\\index.php')
 DEBUG - 2026-11-02 09:55:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-11-02 09:59:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-11-02 09:59:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-11-02 09:59:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-11-02 09:59:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-11-02 09:59:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-11-02 09:59:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-11-02 09:59:46 --> mysqli_sql_exception: Table 'gsb-2026.utilisateur' doesn't exist in C:\xampp\htdocs\morvang\GSB-ALG\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\morvang\GSB-ALG\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `idutili...', 0)
+#1 C:\xampp\htdocs\morvang\GSB-ALG\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `idutili...')
+#2 C:\xampp\htdocs\morvang\GSB-ALG\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `idutili...')
+#3 C:\xampp\htdocs\morvang\GSB-ALG\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `idutili...', Array, false)
+#4 C:\xampp\htdocs\morvang\GSB-ALG\app\Models\GsbModel.php(17): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\morvang\GSB-ALG\app\Controllers\Connexion.php(52): App\Models\GsbModel->get_infos_utilisateur('cbedos', 'gmhxd')
+#6 C:\xampp\htdocs\morvang\GSB-ALG\system\CodeIgniter.php(933): App\Controllers\Connexion->valider()
+#7 C:\xampp\htdocs\morvang\GSB-ALG\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Connexion))
+#8 C:\xampp\htdocs\morvang\GSB-ALG\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\morvang\GSB-ALG\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\morvang\GSB-ALG\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\morvang\GSB-ALG\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\morvang\GSB-ALG\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2026-11-02 09:59:46 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'gsb-2026.utilisateur' doesn't exist
+[Method: POST, Route: connexion/valider]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `idutilisateur`, `nom`, `prenom`, `login`
+FROM `utilisateur`
+WHERE `login` = :login:
+AND `mdp` = :mdp:', [...], false)
+ 2 APPPATH\Models\GsbModel.php(17): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Connexion.php(52): App\Models\GsbModel->get_infos_utilisateur('cbedos', 'gmhxd')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Connexion->valider()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Connexion))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\morvang\\GSB-ALG\\public\\index.php')
+CRITICAL - 2026-11-02 09:59:46 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'gsb-2026.utilisateur' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `idutilisateur`, `nom`, `prenom`, `login`
+FROM `utilisateur`
+WHERE `login` = \'cbedos\'
+AND `mdp` = \'gmhxd\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `idutilisateur`, `nom`, `prenom`, `login`
+FROM `utilisateur`
+WHERE `login` = \'cbedos\'
+AND `mdp` = \'gmhxd\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `idutilisateur`, `nom`, `prenom`, `login`
+FROM `utilisateur`
+WHERE `login` = :login:
+AND `mdp` = :mdp:', [...], false)
+ 4 APPPATH\Models\GsbModel.php(17): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Connexion.php(52): App\Models\GsbModel->get_infos_utilisateur('cbedos', 'gmhxd')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Connexion->valider()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Connexion))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\morvang\\GSB-ALG\\public\\index.php')
+CRITICAL - 2026-11-02 09:59:46 --> [Caused by] mysqli_sql_exception: Table 'gsb-2026.utilisateur' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `idutilisateur`, `nom`, `prenom`, `login`
+FROM `utilisateur`
+WHERE `login` = \'cbedos\'
+AND `mdp` = \'gmhxd\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `idutilisateur`, `nom`, `prenom`, `login`
+FROM `utilisateur`
+WHERE `login` = \'cbedos\'
+AND `mdp` = \'gmhxd\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `idutilisateur`, `nom`, `prenom`, `login`
+FROM `utilisateur`
+WHERE `login` = \'cbedos\'
+AND `mdp` = \'gmhxd\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `idutilisateur`, `nom`, `prenom`, `login`
+FROM `utilisateur`
+WHERE `login` = :login:
+AND `mdp` = :mdp:', [...], false)
+ 5 APPPATH\Models\GsbModel.php(17): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Connexion.php(52): App\Models\GsbModel->get_infos_utilisateur('cbedos', 'gmhxd')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Connexion->valider()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Connexion))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\morvang\\GSB-ALG\\public\\index.php')
+DEBUG - 2026-11-02 09:59:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-11-02 09:59:51 --> mysqli_sql_exception: Table 'gsb-2026.utilisateur' doesn't exist in C:\xampp\htdocs\morvang\GSB-ALG\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\morvang\GSB-ALG\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `idutili...', 0)
+#1 C:\xampp\htdocs\morvang\GSB-ALG\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `idutili...')
+#2 C:\xampp\htdocs\morvang\GSB-ALG\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `idutili...')
+#3 C:\xampp\htdocs\morvang\GSB-ALG\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `idutili...', Array, false)
+#4 C:\xampp\htdocs\morvang\GSB-ALG\app\Models\GsbModel.php(17): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\morvang\GSB-ALG\app\Controllers\Connexion.php(52): App\Models\GsbModel->get_infos_utilisateur('cbedos', 'gmhxd')
+#6 C:\xampp\htdocs\morvang\GSB-ALG\system\CodeIgniter.php(933): App\Controllers\Connexion->valider()
+#7 C:\xampp\htdocs\morvang\GSB-ALG\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Connexion))
+#8 C:\xampp\htdocs\morvang\GSB-ALG\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\morvang\GSB-ALG\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\morvang\GSB-ALG\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\morvang\GSB-ALG\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\morvang\GSB-ALG\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2026-11-02 09:59:51 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'gsb-2026.utilisateur' doesn't exist
+[Method: POST, Route: connexion/valider]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `idutilisateur`, `nom`, `prenom`, `login`
+FROM `utilisateur`
+WHERE `login` = :login:
+AND `mdp` = :mdp:', [...], false)
+ 2 APPPATH\Models\GsbModel.php(17): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Connexion.php(52): App\Models\GsbModel->get_infos_utilisateur('cbedos', 'gmhxd')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Connexion->valider()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Connexion))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\morvang\\GSB-ALG\\public\\index.php')
+CRITICAL - 2026-11-02 09:59:51 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'gsb-2026.utilisateur' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `idutilisateur`, `nom`, `prenom`, `login`
+FROM `utilisateur`
+WHERE `login` = \'cbedos\'
+AND `mdp` = \'gmhxd\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `idutilisateur`, `nom`, `prenom`, `login`
+FROM `utilisateur`
+WHERE `login` = \'cbedos\'
+AND `mdp` = \'gmhxd\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `idutilisateur`, `nom`, `prenom`, `login`
+FROM `utilisateur`
+WHERE `login` = :login:
+AND `mdp` = :mdp:', [...], false)
+ 4 APPPATH\Models\GsbModel.php(17): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Connexion.php(52): App\Models\GsbModel->get_infos_utilisateur('cbedos', 'gmhxd')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Connexion->valider()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Connexion))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\morvang\\GSB-ALG\\public\\index.php')
+CRITICAL - 2026-11-02 09:59:51 --> [Caused by] mysqli_sql_exception: Table 'gsb-2026.utilisateur' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `idutilisateur`, `nom`, `prenom`, `login`
+FROM `utilisateur`
+WHERE `login` = \'cbedos\'
+AND `mdp` = \'gmhxd\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `idutilisateur`, `nom`, `prenom`, `login`
+FROM `utilisateur`
+WHERE `login` = \'cbedos\'
+AND `mdp` = \'gmhxd\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `idutilisateur`, `nom`, `prenom`, `login`
+FROM `utilisateur`
+WHERE `login` = \'cbedos\'
+AND `mdp` = \'gmhxd\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `idutilisateur`, `nom`, `prenom`, `login`
+FROM `utilisateur`
+WHERE `login` = :login:
+AND `mdp` = :mdp:', [...], false)
+ 5 APPPATH\Models\GsbModel.php(17): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Connexion.php(52): App\Models\GsbModel->get_infos_utilisateur('cbedos', 'gmhxd')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Connexion->valider()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Connexion))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\morvang\\GSB-ALG\\public\\index.php')
