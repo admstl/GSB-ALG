@@ -1,0 +1,6 @@
+# Dossier writable 
+# Ignorer tout le contenu généré dans writable
+writable/*/*
+
+# Conserver explicitement les index.html
+!writable/*/index.html
