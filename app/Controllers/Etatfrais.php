@@ -8,7 +8,7 @@ use App\Libraries\Gsb_lib;
 class Etatfrais extends BaseController
 {
     private ?string $annee_mois;
-    private ?string$id_utilisateur;
+    private ?string$id_visiteur;
     private ?string$id_fiche;
     protected Gsb_lib $gsb_lib;
     protected GsbModel $gsb_model;
