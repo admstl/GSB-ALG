@@ -5,7 +5,7 @@ namespace App\Controllers;
 use App\Models\GsbModel;
 use App\Libraries\Gsb_lib;
 
-class Etatfrais extends BaseController
+class EtatFrais extends BaseController
 {
     private ?string $annee_mois;
     private ?string$id_visiteur;
