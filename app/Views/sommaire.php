@@ -17,9 +17,11 @@
     </div>  
 
     <ul id="menuPrincipal" class="menuList">
+        <?php foreach ($menus as $boucle_page) : ?>
         <li>
             <?= anchor('accueil', 'Accueil', ['title' => 'Accueil']) ?>
         </li>
+        <?php endforeach; ?>
         <li>
             <?= anchor('gererfrais', 'Saisie fiche de frais', ['title' => 'Saisie fiche de frais']) ?>
         </li>
