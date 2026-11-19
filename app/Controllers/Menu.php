@@ -7,3 +7,5 @@ class Menu extends BaseController
 {
     protected Etudiants_Model $etudiants_model;
     protected array $menus;
+    
+}
