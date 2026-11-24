@@ -4,3 +4,8 @@ writable/*/*
 
 # Conserver explicitement les index.html
 !writable/*/index.html
+
+# Fichiers d'environnement
+.env
+.env.local
+.env.*.local
