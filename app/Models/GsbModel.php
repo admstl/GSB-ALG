@@ -10,13 +10,13 @@ class GsbModel extends Model
     /** Retourne les informations d'un utilisateur avec son rôle */
     public function get_infos_utilisateur($login, $mdp)
     {
-    return $this->db->table('utilisateur')
-        ->select('utilisateur.idutilisateur, utilisateur.nom, utilisateur.prenom, utilisateur.login, utilisateur.idrole, role.libelle')
-        ->join('role', 'utilisateur.idrole = role.idrole')
-        ->where('utilisateur.login', $login)
-        ->where('utilisateur.mdp', $mdp)
-        ->get()
-        ->getRowArray();
+        return $this->db->table('utilisateur')
+            ->select('idutilisateur, nom, prenom, login, utilisateur.idrole, libelle')
+            ->join('role', 'utilisateur.idrole = role.idrole')
+            ->where('login', $login)
+            ->where('mdp', $mdp)
+            ->get()
+            ->getRowArray();
     }
     /** Retourne les détails d'un visiteur */
     public function get_detail_visiteur($id)

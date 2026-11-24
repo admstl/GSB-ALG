@@ -5,6 +5,7 @@ use App\Models\GsbModel;
 
 class ListeEtudiants extends BaseController
 {
+<<<<<<< HEAD
     protected GsbModel $gsb_model;
     protected array $menus;
 
@@ -41,3 +42,9 @@ class ListeEtudiants extends BaseController
         echo view("", $data);
     }
 }
+=======
+    protected Etudiants_Model $etudiants_model;
+    protected array $menus;
+    
+}
+>>>>>>> eccb339495dc74e5ac21e23363d74713b66549d6
