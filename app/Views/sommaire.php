@@ -1,4 +1,7 @@
-<?php $session = session(); ?>
+<?php 
+$session = session();
+$menus = getMenus();
+?>
 
 <div id="menuGauche">
     <div id="infosUtil">
@@ -17,16 +20,10 @@
     </div>  
 
     <ul id="menuPrincipal" class="menuList">
-        <?php foreach ($menus as $boucle_page) : ?>
-        <li>
-            <?= anchor('accueil', 'Accueil', ['title' => 'Accueil']) ?>
-        </li>
+        <?php foreach ($menus as $item): ?>
+            <li>
+                <?= anchor($item[0], $item[1], $item[2]) ?>
+            </li>
         <?php endforeach; ?>
-        <li>
-            <?= anchor('gererfrais', 'Saisie fiche de frais', ['title' => 'Saisie fiche de frais']) ?>
-        </li>
-        <li>
-            <?= anchor('etatfrais', 'Mes fiches de frais', ['title' => 'Consultation de mes fiches de frais']) ?>
-        </li>
     </ul>
 </div>

@@ -7,23 +7,22 @@ use App\Libraries\Gsb_lib;
 
 class GsbModel extends Model
 {
-    /** Retourne les informations d'un visiteur */
+    /** Retourne les informations d'un utilisateur avec son rôle */
     public function get_infos_utilisateur($login, $mdp)
     {
-        return $this->db->table('utilisateur')
-            ->select('idutilisateur, nom, prenom, login, utilisateur.idrole, libelle')
-            ->join('role', 'utilisateur.idrole = role.idrole')
-            ->where('login', $login)
-            ->where('mdp', $mdp)
-            ->get()
-            ->getRowArray();
+    return $this->db->table('utilisateur')
+        ->select('utilisateur.idutilisateur, utilisateur.nom, utilisateur.prenom, utilisateur.login, utilisateur.idrole, role.libelle')
+        ->join('role', 'utilisateur.idrole = role.idrole')
+        ->where('utilisateur.login', $login)
+        ->where('utilisateur.mdp', $mdp)
+        ->get()
+        ->getRowArray();
     }
-
     /** Retourne les détails d'un visiteur */
-    public function get_detail_utilisateur($id)
+    public function get_detail_visiteur($id)
     {
-        return $this->db->table('utilisateur')
-            ->where('idutilisateur', $id)
+        return $this->db->table('visiteur')
+            ->where('idvisiteur', $id)
             ->get()
             ->getRowArray();
     }
@@ -121,15 +120,18 @@ class GsbModel extends Model
     public function cree_nouvelles_lignes_frais($idVisiteur, $annee, $mois)
     {
         $dernierMois = $this->dernier_mois_saisi($idVisiteur);
-        $gsb_lib = new Gsb_lib();
-        $num_annee = $gsb_lib->get_annee_from_anneemois($dernierMois);
-        $num_mois = $gsb_lib->get_mois_from_anneemois($dernierMois);
 
-        $laDerniereFiche = $this->get_id_ficheFrais($idVisiteur, $num_annee, $num_mois);
+        if ($dernierMois != null) {
+            $gsb_lib = new Gsb_lib();
+            $num_annee = $gsb_lib->get_annee_from_anneemois($dernierMois);
+            $num_mois = $gsb_lib->get_mois_from_anneemois($dernierMois);
 
-        if ($laDerniereFiche != null && $laDerniereFiche['idEtat'] == 'CR') {
-            $idDerniereFiche = $laDerniereFiche['idFiche'];
-            $this->maj_etat_fiche_frais($idDerniereFiche, 'CL');
+            $laDerniereFiche = $this->get_id_ficheFrais($idVisiteur, $num_annee, $num_mois);
+
+            if ($laDerniereFiche != null && $laDerniereFiche['idEtat'] == 'CR') {
+                $idDerniereFiche = $laDerniereFiche['idFiche'];
+                $this->maj_etat_fiche_frais($idDerniereFiche, 'CL');
+            }
         }
 
         $resultat = $this->db->table('fichefrais')->insert([

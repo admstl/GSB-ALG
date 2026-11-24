@@ -20,7 +20,7 @@ class Accueil extends BaseController
 
         $data['titre'] = "Bienvenue sur l'intranet GSB";
 
-        $flux = simplexml_load_file('https://www.santemagazine.fr/feeds/rss/sante');
+        $flux = simplexml_load_file('https://www.lemonde.fr/international/rss_full.xml');
 
         $rss = $flux->channel->item;
 
