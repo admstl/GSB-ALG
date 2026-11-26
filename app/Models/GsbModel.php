@@ -214,7 +214,7 @@ class GsbModel extends Model
     return $this->db->table('fichefrais')
             ->select('fichefrais.idFiche, CONCAT(utilisateur.nom, " ", utilisateur.prenom), annee, mois, fichefrais.montantValide')
             ->join('utilisateur', 'fichefrais.idVisiteur = utilisateur.idutilisateur')
-            ->where('fichefrais.idFiche', $idEtat)
+            ->where('fichefrais.idEtat', $idEtat)
             ->get()
             ->getRowArray();
 
