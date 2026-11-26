@@ -209,4 +209,14 @@ class GsbModel extends Model
         ]);
         return $resultat;
     }
+    public function get_fichefrais_remboursement($idEtat){
+
+    return $this->db->table('fichefrais')
+            ->select('fichefrais.idFiche, CONCAT(utilisateur.nom, " ", utilisateur.prenom), annee, mois, fichefrais.montantValide')
+            ->join('utilisateur', 'fichefrais.idVisiteur = utilisateur.idutilisateur')
+            ->where('fichefrais.idFiche', $idEtat)
+            ->get()
+            ->getRowArray();
+
+    }
 }
